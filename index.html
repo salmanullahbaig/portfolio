@@ -247,6 +247,61 @@
             gap: 1rem;
             margin-bottom: 4rem;
         }
+                /* Hero Grid Layout */
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        /* Profile Image Styles */
+        .hero-image {
+            position: relative;
+        }
+
+        .profile-image-wrapper {
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+
+        .profile-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 3px solid var(--border-color);
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-border {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--primary-color);
+            border-radius: 20px;
+            z-index: 1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-image-wrapper {
+                width: 100%;
+                max-width: 350px;
+                height: 350px;
+                margin: 2rem auto;
+            }
+        }
+
 
         /* Stats */
         .hero-stats {
@@ -796,45 +851,56 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="badge">
-                    <span>✨</span> Available for Projects
-                </div>
-                <h1>
-                    Building <span class="gradient-text">Intelligent Systems</span> That Scale
-                </h1>
-                <p>AI & Machine Learning Engineer with 7+ years crafting production-ready solutions. From algorithmic trading platforms serving 6,000+ users to NLP systems with 95%+ accuracy.</p>
-                
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">
-                        Let's Work Together →
-                    </a>
-                    <a href="#projects" class="btn btn-secondary">
-                        View Projects
-                    </a>
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="badge">
+                        <span>✨</span> Available for Projects
+                    </div>
+                    <h1>
+                        Building <span class="gradient-text">Intelligent Systems</span> That Scale
+                    </h1>
+                    <p>AI & Machine Learning Engineer with 7+ years crafting production-ready solutions. From algorithmic trading platforms serving 6,000+ users to NLP systems with 95%+ accuracy.</p>
+                    
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn btn-primary">
+                            Let's Work Together →
+                        </a>
+                        <a href="#projects" class="btn btn-secondary">
+                            View Projects
+                        </a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-box">
+                            <span class="stat-number">7+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">33+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Success Rate</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">6K+</span>
+                            <span class="stat-label">Users Served</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="hero-stats">
-                    <div class="stat-box">
-                        <span class="stat-number">7+</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                    <div class="stat-box">
-                        <span class="stat-number">33+</span>
-                        <span class="stat-label">Projects</span>
-                    </div>
-                    <div class="stat-box">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Success Rate</span>
-                    </div>
-                    <div class="stat-box">
-                        <span class="stat-number">6K+</span>
-                        <span class="stat-label">Users Served</span>
+                <!-- Profile Image -->
+                <div class="hero-image">
+                    <div class="profile-image-wrapper">
+                        <img src="profile.png" alt="Salman Ullah Baig - AI Developer">
+                        <div class="image-border"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- About Section -->
     <section id="about">
@@ -1653,7 +1719,8 @@
                         💬 WhatsApp
                     </a>
                     <a href="https://www.upwork.com/freelancers/salmanullahbaig" target="_blank" class="contact-link">
-                        💼 Upwork
+                        💼 Upwork 
+                        <i class="fa-brands fa-upwork"></i>
                     </a>
                     <a href="https://www.freelancer.com/u/salmanullahbaig" target="_blank" class="contact-link">
                         🌐 Freelancer
