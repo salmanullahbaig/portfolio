@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salman Ullah Baig - AI & Python Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .hero .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #2d3748;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #667eea;
+            margin: 20px auto 0;
+        }
+        
+        /* About Section */
+        .about {
+            background: white;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4a5568;
+        }
+        
+        .about-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .highlight-card {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid #667eea;
+        }
+        
+        .highlight-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        /* Startup Section */
+        .startup {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        
+        .startup .section-title {
+            color: white;
+        }
+        
+        .startup .section-title::after {
+            background: white;
+        }
+        
+        .startup-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .startup-content h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .startup-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .startup-metrics {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .metric-box {
+            background: rgba(255,255,255,0.2);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .metric-box .number {
+            font-size: 3rem;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .metric-box .label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        /* Projects Section */
+        .projects {
+            background: #f8f9fa;
+        }
+        
+        .project-categories {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .category-filter {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background: white;
+            border: 2px solid #667eea;
+            color: #667eea;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        .category-filter:hover, .category-filter.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-top: 4px solid #667eea;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .project-category {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #e6f2ff;
+            color: #667eea;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .project-card h3 {
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .project-card p {
+            color: #4a5568;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .tech-tag {
+            background: #f7fafc;
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            color: #4a5568;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .project-impact {
+            background: #f0fff4;
+            border-left: 3px solid #48bb78;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+        
+        .project-impact strong {
+            color: #22543d;
+        }
+        
+        .project-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        .project-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Skills Section */
+        .skills {
+            background: white;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .skill-category {
+            background: #f7fafc;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .skill-category h3 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category li {
+            padding: 8px 0;
+            color: #4a5568;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .skill-category li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background: #f8f9fa;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4rem;
+            color: #667eea;
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: #4a5568;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        .testimonial-role {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #667eea;
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero .stats {
+                gap: 20px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Salman Ullah Baig</h1>
+            <p class="tagline">AI & Python Developer Turning Complex Ideas Into Intelligent, Scalable Solutions</p>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">7+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Projects Delivered</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">6,000+</span>
+                    <span class="stat-label">Users Served</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Job Success Rate</span>
+                </div>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Let's Work Together</a>
+                <a href="#projects" class="btn btn-secondary">View My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>I'm a Microsoft Certified AI & Machine Learning Engineer with over 7 years of experience building end-to-end intelligent solutions for startups, global enterprises, and high-value clients. My expertise spans <strong>Python, Django, TensorFlow, PyTorch</strong>, and production deployment on <strong>Azure and DigitalOcean</strong>.</p>
+                
+                <p>As the founder of <strong>Valor.ai</strong>—an AI trading platform that served 6,000+ users and achieved 30% monthly returns—I understand the intersection of <strong>business strategy and technical execution</strong>. Whether it's building algorithmic trading systems, NLP-powered chatbots, or scalable web applications, I deliver production-ready solutions that drive measurable results.</p>
+                
+                <p>I hold <strong>Top Rated Plus status on Upwork with 100% Job Success Score</strong> and am recognized as a <strong>Preferred Freelancer on Freelancer.com</strong>. My clients value my ability to blend technical precision with entrepreneurial thinking, ensuring every solution aligns with business goals.</p>
+            </div>
+            
+            <div class="about-highlights">
+                <div class="highlight-card">
+                    <h3>🏆 Top Rated Plus</h3>
+                    <p>Upwork's highest freelancer designation with 100% success rate</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>🎓 Microsoft Certified</h3>
+                    <p>Azure Data Scientist Associate certification</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>🚀 Startup Founder</h3>
+                    <p>Built and scaled Valor.ai to 6K+ users</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>💡 AI Specialist</h3>
+                    <p>Deep Learning, NLP, Computer Vision expert</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Startup Highlight Section -->
+    <section class="startup">
+        <div class="container">
+            <h2 class="section-title">Startup Success Story</h2>
+            <div class="startup-content">
+                <h3>Valor.ai - AI-Powered Trading Platform</h3>
+                <p>Founded and architected an AI trading platform from concept to production, serving thousands of active traders worldwide. Built proprietary deep learning algorithms using LSTM, RNN, and reinforcement learning for real-time market prediction and automated execution.</p>
+                
+                <p>The platform operated profitably for 2 years with consistent performance, demonstrating both technical excellence and business viability in the competitive fintech space.</p>
+                
+                <div class="startup-metrics">
+                    <div class="metric-box">
+                        <span class="number">6,000+</span>
+                        <span class="label">Active Users</span>
+                    </div>
+                    <div class="metric-box">
+                        <span class="number">30%</span>
+                        <span class="label">Peak Monthly Returns</span>
+                    </div>
+                    <div class="metric-box">
+                        <span class="number">9%</span>
+                        <span class="label">Average Drawdown</span>
+                    </div>
+                    <div class="metric-box">
+                        <span class="number">2 Years</span>
+                        <span class="label">Profitable Operations</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <div class="project-categories">
+                <span class="category-filter active">All</span>
+                <span class="category-filter">AI & Machine Learning</span>
+                <span class="category-filter">Trading Automation</span>
+                <span class="category-filter">Web Development</span>
+                <span class="category-filter">NLP & Chatbots</span>
+                <span class="category-filter">Computer Vision</span>
+            </div>
+            
+            <div class="projects-grid">
+                
+                <!-- Project 1: Deep Learning Trading Bot -->
+                <div class="project-card">
+                    <span class="project-category">Trading Automation</span>
+                    <h3>Deep Learning Trading Bot</h3>
+                    <p><strong>Problem:</strong> Clients needed intelligent trading system capable of real-time market analysis and automated execution across multiple timeframes.</p>
+                    <p><strong>Solution:</strong> Developed advanced deep learning system using PyTorch and LSTM networks with reinforcement learning for adaptive strategy optimization.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">LSTM</span>
+                        <span class="tech-tag">Reinforcement Learning</span>
+                        <span class="tech-tag">API Integration</span>
+                    </div>
+                    <div class="project-impact">
+                        <strong>Impact:</strong> Multi-timeframe analysis with real-time prediction and execution optimized for high-frequency trading environments.
+                    </div>
+                </div>
+
+                <!-- Project 2: AI Trading Strategy Optimization -->
+                <div class="project-card">
+                    <span class="project-category">AI & Machine Learning</span>
+                    <h3>AI-Based Trading Strategy Optimization</h3>
+                    <p><strong>Problem:</strong> Client had multiple backtested trading strategies but needed optimal combination to maximize profitability while minimizing risk.</p>
+                    <p><strong>Solution:</strong> Built ML framework using genetic algorithms and ensemble methods to analyze historical data and identify optimal strategy combinations.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                        <span class="tech-tag">Genetic Algorithms</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">NumPy</span>
+                    </div>
+                    <div class="project-impact">
+                        <strong>Impact:</strong> Increased strategy accuracy to 95%+, significantly minimized drawdowns with cross-validation for model generalization.
+                    </div>
+                    <a href="https://www.freelancer.com/projects/python/Based-Trading-Strategy-Optimization/details" class="project-link" target="_blank">View Project Details →</a>
+                </div>
+
+                <!-- Project 3: CryptoProfitShield -->
+                <div class="project-card">
+                    <span class="project-category">AI & Machine Learning</span>
+                    <h3>CryptoProfitShield.com - Risk Management Platform</h3>
+                    <p><strong>Problem:</strong> Cryptocurrency traders needed intelligent risk management system to protect portfolios in volatile markets.</p>
+                    <p><strong>Solution:</strong> Created AI-powered platform with real-time monitoring, automated risk assessment, and predictive analytics for portfolio protection.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">Risk Analytics</span>
+                        <span class="tech-tag">Real-time Processing</span>
+                    </div>
+                    <div class="project-impact">
+                        <strong>Impact:</strong> Deployed platform serving active trader community with continuous risk monitoring and automated alerts.
+                    </div>
+                    <a href="https://cryptoprofitshield.com/" class="project-link" target="_blank">Visit Platform →</a>
+                </div>
+
+                <!-- Project 4: Arabic Sentiment Analysis -->
+                <div class="project-card">
+                    <span class="project-category">NLP & Chatbots</span>
+                    <h3>Arabic Text Sentiment Classification</h3>
+                    <p><strong>Problem:</strong> Client needed improved sentiment analysis for Arabic text with imbalanced dataset (14,674 positive vs 2,953 negative samples).</p>
+                    <p><strong>Solution:</strong> Enhanced multiple deep learning architectures (LSTM, RNN, SVM) and implemented SMOTE for dataset balancing.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">LSTM</span>
+                        <span class="tech-tag">RNN</span>
+                        <span class="tech-tag">BERT</span>
+                        <span class="tech-tag">Transformers</span>
+                        <span class="tech-tag">NLP</span>
+                    </div>
+                    <div class="project-impact">
+                        <strong>Impact:</strong> Improved LSTM accuracy from 90% to 95%, RNN to 93%, successfully balanced imbalanced dataset.
+                    </div>
+                    <a href="https://www.freelancer.com/projects/algorithm/need-increase-model-accuracy-balance/details" class="project-link" target="_blank">View Project Details →</a>
+                </div>
+
+                <!-- Project 5: AI Chatbot with LangChain -->
+                <div class="project-card">
+                    <span class="project-category">NLP & Chatbots</span>
+                    <h3>Personalized AI Chatbot with OpenAI & LangChain</h3>
+                    <p><strong>Problem:</strong> Organization needed intelligent chatbot trained on custom knowledge base for personalized user interactions.</p>
+                    <p><strong>Solution:</strong> Built conversational AI using OpenAI API and LangChain with context-aware responses trained on domain-specific data.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">OpenAI API</span>
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">Prompt Engineering</span>
+                    </div>
+                    <div class="project-impact">
+                        <strong>Impact:</strong> Production-ready chatbot with personalized, context-aware responses deployed successfully.
+                    </div>
+                </div>
+
+                <!-- Project 6: Neural Network TradingView Bot -->
+                <div class="project-card">
+                    <span class="project-category">Trading Automation</span>
+                    <h3>Machine Learning TradingView Bot</h3>
+                    <p><strong>Problem:</strong> Trader needed automated system integrating TradingView indicators with Bybit exchange for multi-timeframe trading.</p>
+                    <p><strong>Solution:</strong> Created neural network bot with dynamic data acquisition from TradingView and automated execution capabilities.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">LSTM</span>
+                        <span class="tech-tag">Neural Networks</span>
+                        <span class="tech-tag">TradingView API</span>
+                        <span class="tech-tag">Bybit API</span>
+                    </div>
+                    <div class="project-impact">
+                        <strong>Impact:</strong> Multi-timeframe analysis with visual neural network representation and automated buy/sell execution.
+                    </div>
+                    <a href="https://www.freelancer.com/projects/cplusplus-programming/Machine-Learning-Neural-Network/details" class="project-link" target="_blank">View Project Details →</a>
+                </div>
+
+                <!-- Project 7: Video Ad Detection -->
+                <div class="project-card">
+                    <span class="project-category">Computer Vision</span>
+                    <h3>Video Ad Detection & Fingerprinting System</h3>
+                    <p><strong>Problem:</strong> Media company needed real-time system to detect ad breaks in video streams and create unique fingerprints for each advertisement.</p>
+                    <p><strong>Solution:</strong> Built computer vision system using FFMPEG for video processing, speech-to-text for content extraction, and SHA-256 for fingerprinting.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">FFMPEG</span>
+                        <span class="tech-tag">Speech-to-Text</span>
+                        <span class="tech-tag">SHA-256</span>
+                    </div>
+                    <div class="project-impact">
+                        <strong>Impact:</strong> Achieved 98% accuracy in ad break detection with automated fingerprinting and webhook integration.
+                    </div>
+                    <a href="https://www.freelancer.com/projects/software-development/Determine-Video-Breaks-From-Stream/details" class="project-link" target="_blank">View Project Details →</a>
+                </div>
+
+                <!-- Project 8: MarketAlphaQuest -->
+                <div class="project-card">
+                    <span class="project-category">AI & Machine Learning</span>
+                    <h3>MarketAlphaQuest.com - Market Intelligence Platform</h3>
+                    <p><strong>Problem:</strong> Traders needed sophisticated market analytics and signal intelligence platform for informed decision-making.</p>
+                    <p><strong>Solution:</strong> Developed AI-powered platform with predictive modeling, trend analysis, and automated signal generation.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">Predictive Analytics</span>
+                        <span class="tech-tag">Data Visualization</span>
+                    </div>
+                    <div class="project-impact">
+                        <strong>Impact:</strong> Live platform with market trend prediction and continuous model updates serving active trading community.
+                    </div>
+                    <a href="https://marketalphaquest.com/home" class="project-link" target="_blank">Visit Platform →</a>
+                </div>
+
+                <!-- Project 9: Stock Prediction System -->
+                <div class="project-card">
+                    <span class="project-category">AI & Machine Learning</span>
+                    <h3>Real-Time Stock Prediction System</h3>
+                    <p><strong>Problem:</strong> Investors needed accurate real-time stock price prediction system for day trading decisions.</p>
+                    <p><strong>Solution:</strong> Built machine learning system with time series analysis and deep learning models for real-time predictions.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">Time Series Analysis</span>
+                        <span class="tech-tag">Deep Learning</span>
+                    </div>
+                    <div class="project-impact">
+                        <strong>Impact:</strong> Achieved 98% prediction accuracy on real-time stock data enabling confident trading decisions.
+                    </div>
+                </div>
+
+                <!-- Project 10: Customer Churn Prediction -->
+                <div class="project-card">
+                    <span class="project-category">AI & Machine Learning</span>
+                    <h3>Customer Churn Prediction Desktop Application</h3>
+                    <p><strong>Problem:</strong> Business needed tool to predict customer churn using multiple algorithms for comparative analysis.</p>
+                    <p><strong>Solution:</strong> Developed desktop application implementing Logistic Regression, SVM, K-means, Naive Bayes, and Multiple Regression with comparative results.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Logistic Regression</span>
+                        <span class="tech-tag">SVM</span>
+                        <span class="tech-tag">K-means</span>
+                        <span class="tech-tag">Naive Bayes</span>
+                    </div>
+                    <div class="project-impact">
+                        <strong>Impact:</strong> User-friendly desktop interface with real-time predictions and algorithm comparison capabilities.
+                    </div>
+                </div>
+
+                <!-- Project 11: Django Price Calculator -->
+                <div class="project-card">
+                    <span class="project-category">Web Development</span>
+                    <h3>Apartment Booking Price Calculator</h3>
+                    <p><strong>Problem:</strong> Booking platform needed dynamic pricing system with discount rules based on stay duration (weekends, weeks, multiple weeks).</p>
+                    <p><strong>Solution:</strong> Created optimized Django view with efficient database queries and flexible pricing rule validation.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">Database Optimization</span>
+                        <span class="tech-tag">REST API</span>
+                    </div>
+                    <div class="project-impact">
+                        <strong>Impact:</strong> Efficient pricing system with validated rules and optimized database queries reducing response time by 70%.
+                    </div>
+                    <a href="https://www.freelancer.com/projects/python/Price-calculation-for-apartment-booking/details" class="project-link" target="_blank">View Project Details →</a>
+                </div>
+
+                <!-- Project 12: Crypto Trading Algorithm -->
+                <div class="project-card">
+                    <span class="project-category">Trading Automation</span>
+                    <h3>High-Accuracy Crypto Trading Algorithm (Scala/Java)</h3>
+                    <p><strong>Problem:</strong> Client required 98%+ accurate algorithm for cryptocurrency price and trend prediction across multiple timeframes.</p>
+                    <p><strong>Solution:</strong> Developed ML algorithm in Scala/Java with comprehensive backtesting and live trading dashboard.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Scala</span>
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">Backtesting</span>
+                    </div>
+                    <div class="project-impact">
+                        <strong>Impact:</strong> Achieved 98%+ accuracy in price and trend prediction with successful live trading deployment.
+                    </div>
+                    <a href="https://www.freelancer.com/projects/java/Crypto-trading-algorithm-Machine-30227742/details" class="project-link" target="_blank">View Project Details →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>AI & Machine Learning</h3>
+                    <ul>
+                        <li>TensorFlow & PyTorch</li>
+                        <li>Deep Learning (LSTM, RNN, CNN)</li>
+                        <li>Scikit-learn & Keras</li>
+                        <li>Reinforcement Learning</li>
+                        <li>Model Training & Optimization</li>
+                        <li>Ensemble Methods</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>NLP & Computer Vision</h3>
+                    <ul>
+                        <li>BERT & Transformers</li>
+                        <li>LangChain & OpenAI API</li>
+                        <li>Sentiment Analysis</li>
+                        <li>Text Classification</li>
+                        <li>Image Processing</li>
+                        <li>Video Analysis (FFMPEG)</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Programming & Frameworks</h3>
+                    <ul>
+                        <li>Python (Expert)</li>
+                        <li>Django & REST APIs</li>
+                        <li>Java & Scala</li>
+                        <li>Pandas & NumPy</li>
+                        <li>Apache Spark</li>
+                        <li>SQL & NoSQL</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Data & Automation</h3>
+                    <ul>
+                        <li>Web Scraping (Selenium, BeautifulSoup)</li>
+                        <li>Data Pipelines</li>
+                        <li>ETL Processes</li>
+                        <li>Real-time Data Processing</li>
+                        <li>Big Data Analytics</li>
+                        <li>Tableau Visualization</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>DevOps & Deployment</h3>
+                    <ul>
+                        <li>Azure ML & AWS ML</li>
+                        <li>DigitalOcean Deployment</li>
+                        <li>CI/CD Pipelines</li>
+                        <li>Docker Containerization</li>
+                        <li>Git & GitHub</li>
+                        <li>API Integration</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Trading & Finance</h3>
+                    <ul>
+                        <li>Algorithmic Trading</li>
+                        <li>Trading Strategy Optimization</li>
+                        <li>Risk Management Systems</li>
+                        <li>Backtesting Frameworks</li>
+                        <li>Market Analysis</li>
+                        <li>Technical Indicators</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Client Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Salman delivered an exceptional AI trading system that exceeded our expectations. His deep understanding of machine learning and trading algorithms resulted in a robust solution that's been profitable from day one. True professional with founder-level thinking."</p>
+                    <p class="testimonial-author">Michael R.</p>
+                    <p class="testimonial-role">Fintech Startup CEO</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Working with Salman was a game-changer for our project. He not only built a sophisticated NLP system but also provided strategic insights that improved our entire product. His ability to blend technical excellence with business understanding is rare."</p>
+                    <p class="testimonial-author">Sarah K.</p>
+                    <p class="testimonial-role">Product Manager, Tech Company</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Salman's expertise in Django and API development saved us months of work. He delivered a scalable, well-documented solution that our entire team could work with. His code quality and attention to detail are outstanding."</p>
+                    <p class="testimonial-author">James L.</p>
+                    <p class="testimonial-role">CTO, E-commerce Platform</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Ready to Build Something Exceptional?</h2>
+            <p>I'm open to collaborations, consulting, or building your next AI-powered solution. Let's discuss your vision and turn it into reality.</p>
+            <div class="cta-buttons">
+                <a href="mailto:salmanullah.baig@gmail.com" class="btn btn-primary">Email Me</a>
+                <a href="https://www.upwork.com/freelancers/salmanullahbaig" class="btn btn-secondary" target="_blank">View Upwork Profile</a>
+                <a href="https://www.freelancer.com/u/salmanullahbaig" class="btn btn-secondary" target="_blank">View Freelancer Profile</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/salman-baig-b70a256a" target="_blank" title="LinkedIn">📧</a>
+                <a href="https://github.com/salmanullahbaig" target="_blank" title="GitHub">💻</a>
+                <a href="https://www.upwork.com/freelancers/salmanullahbaig" target="_blank" title="Upwork">🔗</a>
+                <a href="https://www.freelancer.com/u/salmanullahbaig" target="_blank" title="Freelancer">🌐</a>
+            </div>
+            <p>&copy; 2025 Salman Ullah Baig. All rights reserved.</p>
+            <p>Microsoft Certified Azure Data Scientist | Top Rated Plus on Upwork | Preferred Freelancer</p>
+        </div>
+    </footer>
+
+    <script>
+        // Category filter functionality
+        const filters = document.querySelectorAll('.category-filter');
+        const projects = document.querySelectorAll('.project-card');
+        
+        filters.forEach(filter => {
+            filter.addEventListener('click', () => {
+                // Remove active class from all filters
+                filters.forEach(f => f.classList.remove('active'));
+                // Add active class to clicked filter
+                filter.classList.add('active');
+                
+                const category = filter.textContent;
+                
+                projects.forEach(project => {
+                    if (category === 'All' || project.querySelector('.project-category').textContent === category) {
+                        project.style.display = 'block';
+                    } else {
+                        project.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
